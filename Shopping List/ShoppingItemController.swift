@@ -11,7 +11,7 @@ import Foundation
 class ShoppingItemController {
     
     // MARK: Properties
-    let itemNames = ["Apple", "Grapes", "Milk", "Muffin", "Popcorn", "Soda", "Strawberries"]
+    var itemNames = ["Apple", "Grapes", "Milk", "Muffin", "Popcorn", "Soda", "Strawberries"]
     
     // Build the default list array in ShoppingItemNames
     // Add each item to UserDefaults
