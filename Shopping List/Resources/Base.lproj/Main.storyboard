@@ -129,6 +129,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bS8-e7-p7U">
                                         <rect key="frame" x="0.0" y="179" width="398" height="30"/>
                                         <state key="normal" title="Submit Order"/>
+                                        <connections>
+                                            <action selector="submitOrderButtonTapped:" destination="TPC-Zh-lte" eventType="touchUpInside" id="nW3-OM-mlk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -144,6 +147,11 @@
                     <navigationItem key="navigationItem" id="wag-Cb-fjr">
                         <barButtonItem key="backBarButtonItem" title="Change Shopping List" id="YjH-6M-eL0"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="addressTextField" destination="R1O-Nb-9Js" id="NaO-Qw-ICt"/>
+                        <outlet property="nameTextField" destination="y3G-En-ZIj" id="j5v-22-2mZ"/>
+                        <outlet property="orderSummaryLabel" destination="ByS-1M-Er8" id="B7f-ba-ada"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUe-1Z-EB5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,21 +9,29 @@
 import UIKit
 
 class OrderViewController: UIViewController {
-
+    
+    // MARK: Properties
+    var shoppingItemController: ShoppingItemController?
+    
+    // MARK: Outlets
+    @IBOutlet weak var orderSummaryLabel: UILabel!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var addressTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: Actions
+    @IBAction func submitOrderButtonTapped(_ sender: UIButton) {
     }
-    */
-
+    
+    // MARK: Methods
+    func updateViews() {
+        guard let shoppingItemController = shoppingItemController else { return }
+        orderSummaryLabel.text = String("You currently have \(shoppingItemController.shoppingList.count) items on your shopping list")
+    }
+    
 }
