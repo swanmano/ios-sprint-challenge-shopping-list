@@ -22,6 +22,8 @@ class ShoppingItemController {
         }
         return shoppingList
     }
+    
+    // Filters items that the user has added to their list to be delivered.
     var addedItems: [ShoppingItem] {
         shoppingList.filter({$0.addToList == true})
     }
@@ -29,17 +31,7 @@ class ShoppingItemController {
         shoppingList.filter({$0.addToList == false})
     }
 
-    func createList() {
-        for name in itemNames {
-            let newItem = ShoppingItem(itemName: name, imageName: name)
-            if !shoppingList.contains(newItem) {
-                shoppingList.append(newItem)
-//                let userDefaults = UserDefaults.standard
-//                userDefaults.set(newItem, forKey: "SetListItem")
-            }
-        }
-    }
-    
+    // MARK: Methods
     // Toggle the "Add to List" if user taps the button
     func updateAddToList(for item: ShoppingItem) {
         guard let index = shoppingList.index(of: item) else { return }

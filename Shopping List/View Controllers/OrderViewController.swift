@@ -38,7 +38,7 @@ class OrderViewController: UIViewController {
     private func showAlert() {
         guard let name = nameTextField.text,
             let address = addressTextField.text else { return }
-        let alert = UIAlertController(title: "Thank you \(name)", message: "Your order will be delivered to \(address) shortly.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Thank you \(name)", message: "Your order will be delivered to \(address) about 15 minutes.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)

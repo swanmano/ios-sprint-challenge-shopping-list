@@ -18,6 +18,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // The following line was added to ensure the initial list was updated
         shoppingItemController.updateList()
         self.clearsSelectionOnViewWillAppear = false
 
@@ -25,26 +26,25 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
     
     // MARK: - Navigation
+    // Called when user taps on the Next bar button after selecting their shopping items
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowOrderScene" {
             guard let orderVC = segue.destination as? OrderViewController else { fatalError() }
             orderVC.shoppingItemController = shoppingItemController
-            print("here we go")
         }
     }
     
 
     // MARK: UICollectionViewDataSource
-    // Uncomment to make sections based on type of item
+    // Uncomment to make sections based on if an item has been added to the list
 //    override func numberOfSections(in collectionView: UICollectionView) -> Int {
 //        // #warning Incomplete implementation, return the number of sections
 //        return 0
 //    }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return shoppingItemController.itemNames.count
+        // builds the number of cells that are currently in the ShoppingList array
+        return shoppingItemController.shoppingList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,39 +55,10 @@ class ShoppingListCollectionViewController: UICollectionViewController {
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
 
+    // MARK: Delegates
+// The delegate is used to change the label from "Not Added" to "Added"
 extension ShoppingListCollectionViewController: ShoppingListCVCellDelegate {
     func toggleAddToList(for cell: ShoppingListCollectionViewCell) {
         guard let shoppingItem = cell.shoppingItem else {return}
