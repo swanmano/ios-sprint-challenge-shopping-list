@@ -26,6 +26,7 @@ class OrderViewController: UIViewController {
     
     // MARK: Actions
     @IBAction func submitOrderButtonTapped(_ sender: UIButton) {
+        showAlert()
     }
     
     // MARK: Methods
@@ -34,4 +35,12 @@ class OrderViewController: UIViewController {
         orderSummaryLabel.text = String("You currently have \(shoppingItemController.addedItems.count) items on your shopping list")
     }
     
+    private func showAlert() {
+        guard let name = nameTextField.text,
+            let address = addressTextField.text else { return }
+        let alert = UIAlertController(title: "Thank you \(name)", message: "Your order will be delivered to \(address) shortly.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
 }
