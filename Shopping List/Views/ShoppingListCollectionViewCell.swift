@@ -20,12 +20,19 @@ class ShoppingListCollectionViewCell: UICollectionViewCell {
     
     // MARK: Outlets
     @IBOutlet weak var itemImage: UIImageView!
-    @IBOutlet weak var itemName: UITextField!
+    @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var addedToList: UIButton!
     
     func updateViews() {
         guard let shoppingItem = shoppingItem else { fatalError("An item was not loaded in the cell.") }
         itemImage.image = shoppingItem.image
         itemName.text = shoppingItem.itemName
+        if shoppingItem.addToList {
+            let buttonText = "Added to List"
+            addedToList.setTitle(buttonText, for: .normal)
+        } else {
+            let buttonText = "Not Added"
+            addedToList.setTitle(buttonText, for: .normal)
+        }
     }
 }

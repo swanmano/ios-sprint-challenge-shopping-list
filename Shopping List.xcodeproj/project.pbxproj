@@ -55,6 +55,30 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		4464F7F323542193000956B0 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4464F7EF23541805000956B0 /* ShoppingListCollectionViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4464F7F4235421B2000956B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4464F7F123541A2E000956B0 /* ShoppingListCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4464F7F5235421BD000956B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4464F7E823540273000956B0 /* ShoppingItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4613E90521143BFC00E7FF73 = {
 			isa = PBXGroup;
 			children = (
@@ -74,11 +98,11 @@
 		4613E91021143BFC00E7FF73 /* Shopping List */ = {
 			isa = PBXGroup;
 			children = (
-				4464F7E823540273000956B0 /* ShoppingItem.swift */,
+				4464F7F5235421BD000956B0 /* Model */,
 				4464F7ED2354105B000956B0 /* ImageHelper.swift */,
 				4464F7EB23540416000956B0 /* ShoppingItemController.swift */,
-				4464F7EF23541805000956B0 /* ShoppingListCollectionViewController.swift */,
-				4464F7F123541A2E000956B0 /* ShoppingListCollectionViewCell.swift */,
+				4464F7F4235421B2000956B0 /* Views */,
+				4464F7F323542193000956B0 /* View Controllers */,
 				4464F7EA235402EA000956B0 /* Resources */,
 			);
 			path = "Shopping List";

@@ -71,6 +71,11 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="150" height="150"/>
+                                <connections>
+                                    <outlet property="addedToList" destination="wXM-wj-mVG" id="CMw-J0-CAm"/>
+                                    <outlet property="itemImage" destination="y8o-xN-HXt" id="Ray-r1-khj"/>
+                                    <outlet property="itemName" destination="z2s-qT-SvK" id="hAP-rK-W1l"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

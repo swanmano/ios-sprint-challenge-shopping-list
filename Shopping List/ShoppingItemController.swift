@@ -21,8 +21,8 @@ class ShoppingItemController {
             let newItem = ShoppingItem(itemName: name, imageName: name)
             if !listArray.contains(newItem) {
                 listArray.append(newItem)
-                let userDefaults = UserDefaults.standard
-                userDefaults.set(newItem, forKey: "SetListItem")
+//                let userDefaults = UserDefaults.standard
+//                userDefaults.set(newItem, forKey: "SetListItem")
             }
         }
         return listArray
