@@ -28,7 +28,7 @@ class ShoppingListCollectionViewCell: UICollectionViewCell {
     
     // MARK: Actions
     @IBAction func addToListButtonTapped(_ sender: UIButton) {
-        
+        delegate?.toggleAddToList(for: self)
         updateViews()
     }
     
