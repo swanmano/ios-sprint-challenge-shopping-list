@@ -48,7 +48,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as? ShoppingListCollectionViewCell else { fatalError("The cell was not found") }
-        let shoppingItem = shoppingItemController.ShoppingItemNames[indexPath.item]
+        let shoppingItem = shoppingItemController.ShoppingItemName[indexPath.item]
         cell.shoppingItem = shoppingItem
         return cell
     }
@@ -85,3 +85,12 @@ class ShoppingListCollectionViewController: UICollectionViewController {
     */
 
 }
+
+extension ShoppingListCollectionViewController: ShoppingListCVCellDelegate {
+    func toggleAddToList(for cell: ShoppingListCollectionViewCell) {
+        guard let shoppingItem = cell.shoppingItem else {return}
+        shoppingItemController.updateAddToList(for: shoppingItem)
+        collectionView?.reloadData()
+    }
+}
+

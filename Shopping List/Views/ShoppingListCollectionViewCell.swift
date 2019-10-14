@@ -11,17 +11,28 @@ import UIKit
 class ShoppingListCollectionViewCell: UICollectionViewCell {
     
     // MARK: Properties
-    
     var shoppingItem: ShoppingItem? {
         didSet {
             updateViews()
         }
     }
     
+    var delegate: ShoppingListCVCellDelegate?
+    
     // MARK: Outlets
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var addedToList: UIButton!
+    
+
+    
+    // MARK: Actions
+    @IBAction func addToListButtonTapped(_ sender: UIButton) {
+        
+        updateViews()
+    }
+    
+
     
     func updateViews() {
         guard let shoppingItem = shoppingItem else { fatalError("An item was not loaded in the cell.") }
