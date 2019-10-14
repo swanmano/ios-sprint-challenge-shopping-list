@@ -22,6 +22,12 @@ class ShoppingItemController {
         }
         return shoppingList
     }
+    var addedItems: [ShoppingItem] {
+        shoppingList.filter({$0.addToList == true})
+    }
+    var notAddedItems: [ShoppingItem] {
+        shoppingList.filter({$0.addToList == false})
+    }
 
     func createList() {
         for name in itemNames {

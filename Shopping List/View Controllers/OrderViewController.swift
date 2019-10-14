@@ -31,7 +31,7 @@ class OrderViewController: UIViewController {
     // MARK: Methods
     func updateViews() {
         guard let shoppingItemController = shoppingItemController else { return }
-        orderSummaryLabel.text = String("You currently have \(shoppingItemController.shoppingList.count) items on your shopping list")
+        orderSummaryLabel.text = String("You currently have \(shoppingItemController.addedItems.count) items on your shopping list")
     }
     
 }
