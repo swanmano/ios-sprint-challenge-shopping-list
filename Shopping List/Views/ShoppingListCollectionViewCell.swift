@@ -16,7 +16,6 @@ class ShoppingListCollectionViewCell: UICollectionViewCell {
             updateViews()
         }
     }
-    
     var delegate: ShoppingListCVCellDelegate?
     
     // MARK: Outlets
@@ -33,7 +32,7 @@ class ShoppingListCollectionViewCell: UICollectionViewCell {
     }
     
 
-    
+    // MARK: Methods
     func updateViews() {
         guard let shoppingItem = shoppingItem else { fatalError("An item was not loaded in the cell.") }
         itemImage.image = shoppingItem.image
