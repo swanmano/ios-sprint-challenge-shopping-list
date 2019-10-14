@@ -18,7 +18,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        shoppingItemController.updateList()
         self.clearsSelectionOnViewWillAppear = false
 
     }
@@ -48,7 +48,7 @@ class ShoppingListCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ItemCell", for: indexPath) as? ShoppingListCollectionViewCell else { fatalError("The cell was not found") }
-        let shoppingItem = shoppingItemController.ShoppingItemName[indexPath.item]
+        let shoppingItem = shoppingItemController.shoppingList[indexPath.item]
         cell.shoppingItem = shoppingItem
         return cell
     }
